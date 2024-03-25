@@ -1,0 +1,11 @@
+import random
+import pandas as pd
+
+lst = ['robot'] * 10
+lst += ['human'] * 10
+random.shuffle(lst)
+
+unique_values = list(set(lst))
+one_hot_data = pd.DataFrame({value: [1 if x == value else 0 for x in lst] for value in unique_values})
+
+one_hot_data.head()
